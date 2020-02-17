@@ -16,14 +16,4 @@ abstract class Product implements Identifiable{
     public void setId(int id) {
         productId = id;
     }
-
-}
-
-public class Book extends Product{
-    public String ISBN;
-    public String barcode;
-}
-
-class Magazine extends Product{
-
 }
