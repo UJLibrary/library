@@ -3,6 +3,7 @@ import java.time.LocalDateTime;
 import Db.Identifiable;
 
 public class CheckOut implements Identifiable {
+    public int userID;
     public int checkOutId;
     public int checkOutCustomer;
     public int productId;
@@ -11,12 +12,12 @@ public class CheckOut implements Identifiable {
 
     @Override
     public int getId() {
-        return productId;
+        return checkOutId;
     }
 
     @Override
     public void setId(int id) {
-        productId = id;
+        checkOutId = id;
     }
 
 
