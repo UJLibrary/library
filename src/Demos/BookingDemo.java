@@ -34,9 +34,11 @@ public class BookingDemo {
 
         Customer cu1 = new Customer("Thomas K", "email@gmail.com");
         cu1.setPass("haslo123");
+        cu1.activeStatus = true;
         uc.createUser(cu1);
         Customer cu2 = new Customer("Mis Yogi", "123@gmail.com");
         cu2.setPass("haslo321");
+        cu2.activeStatus = false;
         uc.createUser(cu2);
     }
 
@@ -59,6 +61,11 @@ public class BookingDemo {
             user = uc.getByEmail(email);
             if (user == null) {
                 System.out.println("\nNiepoprawny adres email albo hasło.\n");
+                continue;
+            }
+
+            if(!user.activeStatus){
+                System.out.println("To konto jest nieaktywne");
                 continue;
             }
 

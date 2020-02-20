@@ -1,10 +1,12 @@
 package Controllers;
 
 import Db.Db;
+import model.Book;
 import model.Customer;
 import model.Employee;
 import model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public class UserController {
@@ -29,6 +31,10 @@ public class UserController {
 
     public User getByEmail(String email) {
         return db.users.getFirstOrNull(e -> e.email.equals(email));
+    }
+
+    public List<User> searchByActiveStatus(boolean status) {
+        return db.users.search(e -> e.activeStatus == status);
     }
 
     public boolean authenticate(User user, String password) {

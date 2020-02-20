@@ -6,8 +6,9 @@ public class Employee extends User implements Identifiable {
     public Role role;
     public int supervisorId;
 
-    public Employee(String name, String email) {
+    public Employee(String name, String email, Role role) {
         super(name, email);
+        this.role = role;
     }
 
 
