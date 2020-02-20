@@ -19,6 +19,14 @@ public class DbCollection<T extends Identifiable> {
         return original;
     }
 
+    public void remove(int id) {
+        if (!table.contains(id))
+            throw new IllegalArgumentException("No such id in the DB.");
+
+        table.remove(id);
+
+    }
+
     public int add(T element) {
         if (table.values().stream().anyMatch(e -> e == element)) {
             throw new IllegalArgumentException(

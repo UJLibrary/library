@@ -1,22 +1,22 @@
 package model;
-import java.time.LocalDateTime;
 import Db.Identifiable;
 
-public class BookAuthor{
-    private Book book;
-    public BookAuthor() {
-        this.book = new Book();
-        book.setBookId();
+public class BookAuthor implements Identifiable{
+    public int bookAuthorId;
+    public int bookId;
+    public int authorId;
+
+    public BookAuthor(int bookId, int authorId) {
+        this.bookId = bookId;
+        this.authorId = authorId;
     }
-    public int getId() {
-        return book.getBookId();
-    }
+
     @Override
     public int getId() {
-        return authorId;
+        return bookAuthorId;
     }
     @Override
     public void setId(int id) {
-        authorId = id;
+        bookAuthorId = id;
     }
 }
