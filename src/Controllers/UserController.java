@@ -17,7 +17,7 @@ public class UserController {
     }
 
     public User createUser(User user) {
-        if (db.users.getFirstOrNull(e -> e.email == user.email) != null) {
+        if (db.users.getFirstOrNull(e -> e.email.equals(user.email)) != null) {
             throw new IllegalArgumentException("The email is already used.");
         }
 

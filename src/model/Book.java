@@ -10,8 +10,9 @@ public class Book extends Product{
     public String barcode;
     public ArrayList<Author> authors;
 
-    public Book(String name, String publisher, LocalDate releaseDate, Author author) {
+    public Book(String name, String publisher, LocalDate releaseDate, Author author, String isbn) {
         super(name, publisher, releaseDate);
+        this.ISBN = isbn;
         authors = new ArrayList<Author>();
         authors.add(author);
         this.productTypeSignature = getProductTypeSignature();

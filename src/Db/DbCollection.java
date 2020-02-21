@@ -12,7 +12,7 @@ public class DbCollection<T extends Identifiable> {
     private Hashtable<Integer, T> table = new Hashtable<>();
 
     public T get(int id) {
-        if (!table.contains(id))
+        if (!table.containsKey(id))
             throw new IllegalArgumentException("No such id in the DB.");
 
         T original = table.get(id);
@@ -20,7 +20,7 @@ public class DbCollection<T extends Identifiable> {
     }
 
     public void remove(int id) {
-        if (!table.contains(id))
+        if (!table.containsKey(id))
             throw new IllegalArgumentException("No such id in the DB.");
 
         table.remove(id);

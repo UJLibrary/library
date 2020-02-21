@@ -17,7 +17,7 @@ public class AuthorController {
     }
 
     public Author createAuthor(String name) {
-        if (db.authors.getFirstOrNull(e -> e.name == name) != null)
+        if (db.authors.getFirstOrNull(e -> e.name.equals(name)) != null)
             throw new IllegalArgumentException("Author name already present in database.");
         else {
             var author = new Author(name);

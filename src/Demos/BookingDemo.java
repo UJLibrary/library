@@ -23,13 +23,13 @@ public class BookingDemo {
         var bc = new BookController(db);
         var uc = new UserController(db);
         Author author1 = ac.createAuthor("Dan Brown");
-        Book book = bc.createBook("Cyfrowa Twierdza", "Wydawnictwo", LocalDate.now(), author1);
+        Book book = bc.createBook("Cyfrowa Twierdza", "Wydawnictwo", LocalDate.now(), author1,"1");
         book.checkOutId = 1;
         Author author2 = ac.createAuthor("Antoine de Saint-Exupéry");
-        Book book2 = bc.createBook("Twierdza", "Wydawnictwo", LocalDate.now(), author2);
+        Book book2 = bc.createBook("Twierdza", "Wydawnictwo", LocalDate.now(), author2, "2");
         book2.checkOutId = 2;
         Author author3 = ac.createAuthor("Henryk Sienkiewicz");
-        Book book3 = bc.createBook("Ogniem i Mieczem", "Wydawnictwo", LocalDate.now(), author3);
+        Book book3 = bc.createBook("Ogniem i Mieczem", "Wydawnictwo", LocalDate.now(), author3, "3");
         book.checkOutId = 3;
 
         Customer cu1 = new Customer("Thomas K", "email@gmail.com");

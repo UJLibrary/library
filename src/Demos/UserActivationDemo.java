@@ -30,10 +30,12 @@ public class UserActivationDemo {
         cu2.activeStatus = false;
 
         Employee em1 = new Employee("Euzebia", "lody@algida.pl", Role.Staff);
+        em1.setPass("123");
         em1.activeStatus = false;
         uc.createUser(em1);
         Employee em2 = new Employee("Kunegunda", "czekolada@wawel.pl", Role.Staff);
-        em1.activeStatus = false;
+        em2.setPass("123");
+        em2.activeStatus = false;
         uc.createUser(em2);
         Employee admin = new Employee("Przyspawany Marian", "gram@w.pracy", Role.Admin);
         admin.setPass("123");
